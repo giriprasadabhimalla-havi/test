@@ -1,4 +1,4 @@
-use warehouse transformed;
+use warehouse transforming;
 {{ config (
     materialized="table"
 )}}
