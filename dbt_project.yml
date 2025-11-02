@@ -8,7 +8,18 @@ config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
-
+my_new_project:        # ← must match your project name in dbt_project.yml
+  target: default
+  outputs:
+    default:
+      type: snowflake
+      account: <your_snowflake_account>
+      user: <your_user>
+      password: <your_password>
+      role: TRANSFORMER
+      warehouse: TRANSFORMING     # ✅ MUST be here
+      database: ANALYTICS
+      schema: dbt_gabhimalla
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
 # found in the "models/" directory. You probably won't need to change these!
