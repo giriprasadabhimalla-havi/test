@@ -9,7 +9,7 @@ fct_orders as (
     payment_id,
     amount
     from orders o
-    left join payments p on o.order_id = p.order_id
+    left join payments p on o.order_id = p.orderid
 )
 
 select * from fct_orders
