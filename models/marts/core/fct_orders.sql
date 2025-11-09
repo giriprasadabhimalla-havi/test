@@ -1,8 +1,15 @@
+{{ config (
+    materialized = 'view'
+)}}
 with orders as (
     select * from {{ref('stg_order')}}
 ),
 payments as (
     select * from {{ ref('stg_payment')}}
+),
+
+customers as (
+    select * from {{ ref('dim_customers')}}
 ),
 fct_orders as (
     select order_id,

@@ -1,4 +1,6 @@
-{%- set dummy = "" -%}
+{{ config (
+    materialized='ephemeral'
+)}}
 
 
 with customers as (
